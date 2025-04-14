@@ -1,6 +1,7 @@
 /Users/songang/LinkProjects/upgrade/upgradelink-api-java/src/main/java/com/toolsetlink/upgradelink/api/Client.java
 /Users/songang/LinkProjects/upgrade/upgradelink-api-java/src/main/java/com/toolsetlink/upgradelink/api/models/FileUpgradeRequest.java
 /Users/songang/LinkProjects/upgrade/upgradelink-api-java/src/main/java/com/toolsetlink/upgradelink/api/models/FileUpgradeResponse.java
+/Users/songang/LinkProjects/upgrade/upgradelink-api-java/src/main/java/com/toolsetlink/upgradelink/api/models/Config.java
 /Users/songang/LinkProjects/upgrade/upgradelink-api-java/src/main/java/com/toolsetlink/upgradelink/api/models/FileUpgradeDataResponse.java
 /Users/songang/LinkProjects/upgrade/upgradelink-api-java/src/main/java/com/toolsetlink/upgradelink/api/models/UrlUpgradeResponse.java
 /Users/songang/LinkProjects/upgrade/upgradelink-api-java/src/main/java/com/toolsetlink/upgradelink/api/models/UrlUpgradeDataResponse.java

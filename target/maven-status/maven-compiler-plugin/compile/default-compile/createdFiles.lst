@@ -1,4 +1,5 @@
 com/toolsetlink/upgradelink/api/Client.class
+com/toolsetlink/upgradelink/api/models/Config.class
 com/toolsetlink/upgradelink/api/models/UrlUpgradeDataResponse.class
 com/toolsetlink/upgradelink/api/models/UrlUpgradeResponse.class
 com/toolsetlink/upgradelink/api/models/FileUpgradeRequest.class
