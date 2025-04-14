@@ -1,28 +1,26 @@
 package com.toolsetlink.upgradelink.api;  // 包名必须与被测试类一致
 
-import com.toolsetlink.upgradelink.api.models.FileUpgradeRequest;
-import com.toolsetlink.upgradelink.api.models.FileUpgradeResponse;
-import com.toolsetlink.upgradelink.api.models.UrlUpgradeRequest;
-import com.toolsetlink.upgradelink.api.models.UrlUpgradeResponse;
+import com.toolsetlink.upgradelink.api.models.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class ClientTest {  // 类名 = 被测试类名 + Test
 
-    private final String accessKeyId = "a1";
-    private final String accessKeySecret = "a2";
+    private final String accessKey = "mui2W50H1j-OC4xD6PgQag";
+    private final String accessSecret = "PEbdHFGC0uO_Pch7XWBQTMsFRxKPQAM2565eP8LJ3gc";
     private Client client;
 
     @BeforeEach
     void setUp() throws Exception {
-        client = new Client(accessKeyId, accessKeySecret);
+        Config config = new Config();
+        config.setAccessKey(accessKey);
+        config.setAccessSecret(accessSecret);
+        client = new Client(config);
     }
 
     @Test
     public void testGetUrlUpgrade() throws Exception {
         // 创建 Client 对象
-        Client client = new Client(accessKeyId, accessKeySecret);
-
         UrlUpgradeRequest request = new UrlUpgradeRequest();
         request.setUrlKey("key1");
         request.setVersionCode(1);
@@ -46,8 +44,6 @@ public class ClientTest {  // 类名 = 被测试类名 + Test
     @Test
     public void testGetFileUpgrade() throws Exception {
         // 创建 Client 对象
-        Client client = new Client(accessKeyId, accessKeySecret);
-
         FileUpgradeRequest request = new FileUpgradeRequest();
         request.setFileKey("key1");
         request.setVersionCode(1);

@@ -12,13 +12,25 @@ public class Client {
 
     private final static InterceptorChain interceptorChain = InterceptorChain.create();
 
+    public String _accessKey;
+    public String _accessSecret;
+    public String _protocol;
     public String _endpoint;
-    public String _accessKeyId;
-    public String _accessKeySecret;
-    public Client(String accessKeyId, String accessKeySecret) throws Exception {
-        this._endpoint = "api.upgrade.toolsetlink.com";
-        this._accessKeyId = accessKeyId;
-        this._accessKeySecret = accessKeySecret;
+    public Client(Config config) throws Exception {
+        this._accessKey = config.accessKey;
+        this._accessSecret = config.accessSecret;
+        if (com.aliyun.teautil.Common.equalString(config.protocol, "HTTPS")) {
+            this._protocol = "HTTPS";
+        } else {
+            this._protocol = "HTTP";
+        }
+
+        if (com.aliyun.teautil.Common.empty(config.endpoint)) {
+            this._endpoint = "api.upgrade.toolsetlink.com";
+        } else {
+            this._endpoint = config.endpoint;
+        }
+
     }
 
     public UrlUpgradeResponse getUrlUpgrade(UrlUpgradeRequest request) throws Exception {
@@ -47,20 +59,20 @@ public class Client {
                 String timestamp = com.toolsetlink.darabonba.base.Client.timeRFC3339();
                 String nonce = com.toolsetlink.darabonba.base.Client.generateNonce();
                 String uri = "/v1/url/upgrade";
-                String accessKeySecret = _accessKeySecret;
-                String accessKeyId = _accessKeyId;
+                String accessKey = _accessKey;
+                String accessSecret = _accessSecret;
                 // 生成签名
-                String signature = com.toolsetlink.darabonba.base.Client.generateSignature(bodyStr, nonce, accessKeySecret, timestamp, uri);
-                request_.protocol = "HTTP";
+                String signature = com.toolsetlink.darabonba.base.Client.generateSignature(bodyStr, nonce, accessSecret, timestamp, uri);
+                request_.protocol = _protocol;
                 request_.method = "POST";
                 request_.pathname = "/v1/url/upgrade";
                 request_.headers = TeaConverter.buildMap(
                     new TeaPair("host", _endpoint),
                     new TeaPair("content-type", "application/json"),
-                    new TeaPair("x-timestamp", timestamp),
-                    new TeaPair("x-nonce", nonce),
-                    new TeaPair("x-accesskey", accessKeyId),
-                    new TeaPair("x-signature", signature)
+                    new TeaPair("x-Timestamp", timestamp),
+                    new TeaPair("x-Nonce", nonce),
+                    new TeaPair("x-AccessKey", accessKey),
+                    new TeaPair("x-Signature", signature)
                 );
                 request_.body = Tea.toReadable(bodyStr);
                 _lastRequest = request_;
@@ -116,20 +128,20 @@ public class Client {
                 String timestamp = com.toolsetlink.darabonba.base.Client.timeRFC3339();
                 String nonce = com.toolsetlink.darabonba.base.Client.generateNonce();
                 String uri = "/v1/file/upgrade";
-                String accessKeySecret = _accessKeySecret;
-                String accessKeyId = _accessKeyId;
+                String accessKey = _accessKey;
+                String accessSecret = _accessSecret;
                 // 生成签名
-                String signature = com.toolsetlink.darabonba.base.Client.generateSignature(bodyStr, nonce, accessKeySecret, timestamp, uri);
-                request_.protocol = "HTTP";
+                String signature = com.toolsetlink.darabonba.base.Client.generateSignature(bodyStr, nonce, accessSecret, timestamp, uri);
+                request_.protocol = _protocol;
                 request_.method = "POST";
                 request_.pathname = "/v1/file/upgrade";
                 request_.headers = TeaConverter.buildMap(
                     new TeaPair("host", _endpoint),
                     new TeaPair("content-type", "application/json"),
-                    new TeaPair("x-timestamp", timestamp),
-                    new TeaPair("x-nonce", nonce),
-                    new TeaPair("x-accesskey", accessKeyId),
-                    new TeaPair("x-signature", signature)
+                    new TeaPair("x-Timestamp", timestamp),
+                    new TeaPair("x-Nonce", nonce),
+                    new TeaPair("x-AccessKey", accessKey),
+                    new TeaPair("x-Signature", signature)
                 );
                 request_.body = Tea.toReadable(bodyStr);
                 _lastRequest = request_;

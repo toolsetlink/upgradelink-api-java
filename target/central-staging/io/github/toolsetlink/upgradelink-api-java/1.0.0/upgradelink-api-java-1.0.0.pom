@@ -15,6 +15,7 @@
       <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
     </license>
   </licenses>
+
   <developers>
     <developer>
       <id>toolsetlink</id>
@@ -22,39 +23,49 @@
       <email>toolsetlink@163.com</email>
     </developer>
   </developers>
+
   <scm>
     <connection/>
     <developerConnection/>
     <url/>
   </scm>
+
   <dependencies>
     <dependency>
       <groupId>com.aliyun</groupId>
       <artifactId>tea-util</artifactId>
       <version>0.2.23</version>
     </dependency>
+
     <dependency>
       <groupId>io.github.toolsetlink</groupId>
       <artifactId>darabonba-base-java</artifactId>
       <version>1.0.0</version>
     </dependency>
+
     <dependency>
       <groupId>com.aliyun</groupId>
       <artifactId>tea</artifactId>
       <version>1.1.14</version>
     </dependency>
+
+    <!-- JUnit 5 -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
       <version>5.8.2</version>
       <scope>test</scope>
     </dependency>
+
+    <!-- Mockito -->
     <dependency>
       <groupId>org.mockito</groupId>
       <artifactId>mockito-core</artifactId>
       <version>4.5.1</version>
       <scope>test</scope>
     </dependency>
+
+    <!-- 如果需要模拟静态方法 -->
     <dependency>
       <groupId>org.powermock</groupId>
       <artifactId>powermock-api-mockito2</artifactId>
@@ -62,6 +73,7 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
   <build>
     <plugins>
       <plugin>
@@ -87,6 +99,11 @@
           </execution>
         </executions>
       </plugin>
+
+
+
+
+      <!--   source源码插件 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
@@ -100,6 +117,7 @@
           </execution>
         </executions>
       </plugin>
+      <!--   javadoc插件 -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
@@ -113,6 +131,7 @@
           </execution>
         </executions>
       </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
