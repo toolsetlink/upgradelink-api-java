@@ -22,11 +22,11 @@ public class ClientTest {  // 类名 = 被测试类名 + Test
     public void testGetUrlUpgrade() throws Exception {
         // 创建 Client 对象
         UrlUpgradeRequest request = new UrlUpgradeRequest();
-        request.setUrlKey("key1");
+        request.setUrlKey("uJ47NPeT7qjLa11gL3sVHqw");
         request.setVersionCode(1);
         request.setAppointVersionCode(0);
-        request.setDevKey("macmac");
-        request.setDevModelKey("tv1");
+        request.setDevKey("");
+        request.setDevModelKey("");
 
         try {
             UrlUpgradeResponse info = client.getUrlUpgrade(request);
@@ -45,11 +45,11 @@ public class ClientTest {  // 类名 = 被测试类名 + Test
     public void testGetFileUpgrade() throws Exception {
         // 创建 Client 对象
         FileUpgradeRequest request = new FileUpgradeRequest();
-        request.setFileKey("key1");
+        request.setFileKey("uJ47NPeT7qjLa11gL3sVHqw");
         request.setVersionCode(1);
         request.setAppointVersionCode(0);
-        request.setDevKey("macmac");
-        request.setDevModelKey("tv1");
+        request.setDevKey("");
+        request.setDevModelKey("");
 
         try {
             FileUpgradeResponse info = client.getFileUpgrade(request);
