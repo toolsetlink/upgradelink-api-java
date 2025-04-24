@@ -25,8 +25,8 @@ public class ClientTest {  // 类名 = 被测试类名 + Test
         request.setUrlKey("uJ47NPeT7qjLa11gL3sVHqw");
         request.setVersionCode(1);
         request.setAppointVersionCode(0);
-        request.setDevKey("");
-        request.setDevModelKey("");
+//        request.setDevKey("");
+//        request.setDevModelKey("");
 
         try {
             UrlUpgradeResponse info = client.getUrlUpgrade(request);
