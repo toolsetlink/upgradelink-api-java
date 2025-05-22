@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.toolsetlink.upgradelink.api.ClientTest" time="0.002" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.toolsetlink.upgradelink.api.ClientTest" time="0.007" tests="3" errors="0" skipped="0" failures="0">
   <properties>
     <property name="socksProxyHost" value="127.0.0.1"/>
     <property name="http.proxyHost" value="127.0.0.1"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CN"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/23.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/songang/LinkProjects/upgrade/upgradelink-api-java/target/surefire/surefirebooter11960510254320957876.jar /Users/songang/LinkProjects/upgrade/upgradelink-api-java/target/surefire 2025-04-14T15-16-07_439-jvmRun1 surefire174383326752067458tmp surefire_013278292341094804834tmp"/>
+    <property name="sun.java.command" value="/Users/songang/LinkProjects/upgrade/upgradelink-api-java/target/surefire/surefirebooter1939325377043286686.jar /Users/songang/LinkProjects/upgrade/upgradelink-api-java/target/surefire 2025-05-22T16-49-08_740-jvmRun1 surefire15980079900191036905tmp surefire_01598113110748267619tmp"/>
     <property name="http.nonProxyHosts" value="192.168.0.0/16|*.192.168.0.0/16|10.0.0.0/8|*.10.0.0.0/8|172.16.0.0/12|*.172.16.0.0/12|127.0.0.1|localhost|*.localhost|local|*.local|timestamp.apple.com|*.timestamp.apple.com|sequoia.apple.com|*.sequoia.apple.com|seed-sequoia.siri.apple.com|*.seed-sequoia.siri.apple.com"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/songang/LinkProjects/upgrade/upgradelink-api-java/target/test-classes:/Users/songang/LinkProjects/upgrade/upgradelink-api-java/target/classes:/Users/songang/.m2/repository/com/aliyun/tea-util/0.2.23/tea-util-0.2.23.jar:/Users/songang/.m2/repository/com/google/code/gson/gson/2.11.0/gson-2.11.0.jar:/Users/songang/.m2/repository/com/google/errorprone/error_prone_annotations/2.27.0/error_prone_annotations-2.27.0.jar:/Users/songang/.m2/repository/io/github/toolsetlink/darabonba-base-java/1.0.0/darabonba-base-java-1.0.0.jar:/Users/songang/.m2/repository/com/aliyun/tea/1.1.14/tea-1.1.14.jar:/Users/songang/.m2/repository/com/squareup/okhttp3/okhttp/3.12.13/okhttp-3.12.13.jar:/Users/songang/.m2/repository/com/squareup/okio/okio/1.15.0/okio-1.15.0.jar:/Users/songang/.m2/repository/org/jacoco/org.jacoco.agent/0.8.4/org.jacoco.agent-0.8.4-runtime.jar:/Users/songang/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.8.2/junit-jupiter-api-5.8.2.jar:/Users/songang/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar:/Users/songang/.m2/repository/org/junit/platform/junit-platform-commons/1.8.2/junit-platform-commons-1.8.2.jar:/Users/songang/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/songang/.m2/repository/org/mockito/mockito-core/4.5.1/mockito-core-4.5.1.jar:/Users/songang/.m2/repository/net/bytebuddy/byte-buddy/1.12.9/byte-buddy-1.12.9.jar:/Users/songang/.m2/repository/net/bytebuddy/byte-buddy-agent/1.12.9/byte-buddy-agent-1.12.9.jar:/Users/songang/.m2/repository/org/objenesis/objenesis/3.2/objenesis-3.2.jar:/Users/songang/.m2/repository/org/powermock/powermock-api-mockito2/2.0.9/powermock-api-mockito2-2.0.9.jar:/Users/songang/.m2/repository/org/powermock/powermock-api-support/2.0.9/powermock-api-support-2.0.9.jar:/Users/songang/.m2/repository/org/powermock/powermock-reflect/2.0.9/powermock-reflect-2.0.9.jar:/Users/songang/.m2/repository/org/powermock/powermock-core/2.0.9/powermock-core-2.0.9.jar:/Users/songang/.m2/repository/org/javassist/javassist/3.27.0-GA/javassist-3.27.0-GA.jar:"/>
@@ -33,7 +33,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="apple.awt.application.name" value="ForkedBooter"/>
-    <property name="surefire.real.class.path" value="/Users/songang/LinkProjects/upgrade/upgradelink-api-java/target/surefire/surefirebooter11960510254320957876.jar"/>
+    <property name="surefire.real.class.path" value="/Users/songang/LinkProjects/upgrade/upgradelink-api-java/target/surefire/surefirebooter1939325377043286686.jar"/>
     <property name="user.script" value="Hans"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="192.168.0.0/16|*.192.168.0.0/16|10.0.0.0/8|*.10.0.0.0/8|172.16.0.0/12|*.172.16.0.0/12|127.0.0.1|localhost|*.localhost|local|*.local|timestamp.apple.com|*.timestamp.apple.com|sequoia.apple.com|*.sequoia.apple.com|seed-sequoia.siri.apple.com|*.seed-sequoia.siri.apple.com"/>
@@ -41,7 +41,7 @@
     <property name="user.name" value="songang"/>
     <property name="stdout.encoding" value="UTF-8"/>
     <property name="path.separator" value=":"/>
-    <property name="os.version" value="15.3.2"/>
+    <property name="os.version" value="15.5"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
@@ -65,6 +65,7 @@
     <property name="java.class.version" value="67.0"/>
     <property name="http.proxyPort" value="7890"/>
   </properties>
-  <testcase name="com.toolsetlink.upgradelink.api.ClientTest.testGetUrlUpgrade" classname="com.toolsetlink.upgradelink.api.ClientTest" time="0.001"/>
+  <testcase name="com.toolsetlink.upgradelink.api.ClientTest.testGetUrlUpgrade" classname="com.toolsetlink.upgradelink.api.ClientTest" time="0"/>
   <testcase name="com.toolsetlink.upgradelink.api.ClientTest.testGetFileUpgrade" classname="com.toolsetlink.upgradelink.api.ClientTest" time="0"/>
+  <testcase name="com.toolsetlink.upgradelink.api.ClientTest.testPostAppReport" classname="com.toolsetlink.upgradelink.api.ClientTest" time="0.006"/>
 </testsuite>

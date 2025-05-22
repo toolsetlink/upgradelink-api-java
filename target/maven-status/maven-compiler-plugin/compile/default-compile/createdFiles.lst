@@ -1,8 +1,13 @@
+com/toolsetlink/upgradelink/api/models/FileUpgradeRequest.class
+com/toolsetlink/upgradelink/api/models/UrlUpgradeRequest.class
+com/toolsetlink/upgradelink/api/Enums.class
+com/toolsetlink/upgradelink/api/Tools.class
+com/toolsetlink/upgradelink/api/models/AppReportRequest.class
 com/toolsetlink/upgradelink/api/Client.class
 com/toolsetlink/upgradelink/api/models/Config.class
 com/toolsetlink/upgradelink/api/models/UrlUpgradeDataResponse.class
 com/toolsetlink/upgradelink/api/models/UrlUpgradeResponse.class
-com/toolsetlink/upgradelink/api/models/FileUpgradeRequest.class
+com/toolsetlink/upgradelink/api/models/AppReportResponse.class
+com/toolsetlink/upgradelink/api/models/AppReportRequest$AppReportRequestEventData.class
 com/toolsetlink/upgradelink/api/models/FileUpgradeResponse.class
 com/toolsetlink/upgradelink/api/models/FileUpgradeDataResponse.class
-com/toolsetlink/upgradelink/api/models/UrlUpgradeRequest.class
