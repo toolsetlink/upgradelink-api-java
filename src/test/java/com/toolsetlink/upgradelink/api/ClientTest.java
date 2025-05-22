@@ -18,6 +18,7 @@ public class ClientTest {  // 类名 = 被测试类名 + Test
         client = new Client(config);
     }
 
+    // 测试获取url应用升级信息
     @Test
     public void testGetUrlUpgrade() throws Exception {
         // 创建 Client 对象
@@ -29,7 +30,7 @@ public class ClientTest {  // 类名 = 被测试类名 + Test
 //        request.setDevModelKey("");
 
         try {
-            UrlUpgradeResponse info = client.getUrlUpgrade(request);
+            UrlUpgradeResponse info = client.UrlUpgrade(request);
             System.out.println(info.code);
             System.out.println(info.msg);
             System.out.println(info.data);
@@ -41,6 +42,7 @@ public class ClientTest {  // 类名 = 被测试类名 + Test
 
     }
 
+    // 测试获取文件应用升级信息
     @Test
     public void testGetFileUpgrade() throws Exception {
         // 创建 Client 对象
@@ -52,7 +54,7 @@ public class ClientTest {  // 类名 = 被测试类名 + Test
         request.setDevModelKey("");
 
         try {
-            FileUpgradeResponse info = client.getFileUpgrade(request);
+            FileUpgradeResponse info = client.FileUpgrade(request);
             System.out.println(info.code);
             System.out.println(info.msg);
             System.out.println(info.data);
@@ -63,4 +65,56 @@ public class ClientTest {  // 类名 = 被测试类名 + Test
         System.out.println("testGetFileUpgrade end");
 
     }
+
+    // 测试获取事件上报接口
+    @Test
+    public void testPostAppReport() throws Exception {
+
+        /* app_start 应用-启动事件 */
+//        AppReportRequest request = new AppReportRequest();
+//        request.setEventType(Enums.EVENT_TYPE_APP_START);
+//        request.setAppKey("LOYlLXNy7wV3ySuh0XgtSg");
+//        request.setDevKey("");
+//        request.setDevModelKey("");
+//        request.setVersionCode(1);
+//        request.setTimestamp(Tools.timeRFC3339());
+//        request.setEventData(new AppReportRequest.AppReportRequestEventData().setLaunchTime(Tools.timeRFC3339()));
+
+        /* app_upgrade_download 应用升级-下载事件 */
+//        AppReportRequest request = new AppReportRequest();
+//        request.setEventType(Enums.EVENT_TYPE_APP_UPGRADE_DOWNLOAD);
+//        request.setAppKey("LOYlLXNy7wV3ySuh0XgtSg");
+//        request.setDevKey("");
+//        request.setDevModelKey("");
+//        request.setVersionCode(1);
+//        request.setTimestamp(Tools.timeRFC3339());
+//        request.setEventData(new AppReportRequest.AppReportRequestEventData()
+//                .setCode(Enums.EVENT_TYPE_CODE_SUCCESS)
+//                .setDownloadVersionCode(10));
+
+
+        /* app_upgrade_install 应用升级-升级事件 */
+        AppReportRequest request = new AppReportRequest();
+        request.setEventType(Enums.EVENT_TYPE_APP_UPGRADE_UPGRADE);
+        request.setAppKey("LOYlLXNy7wV3ySuh0XgtSg");
+        request.setDevKey("");
+        request.setDevModelKey("");
+        request.setVersionCode(1);
+        request.setTimestamp(Tools.timeRFC3339());
+        request.setEventData(new AppReportRequest.AppReportRequestEventData()
+                .setCode(Enums.EVENT_TYPE_CODE_SUCCESS)
+                .setUpgradeVersionCode(10));
+
+        try {
+            AppReportResponse info = client.AppReport(request);
+            System.out.println(info.code);
+            System.out.println(info.msg);
+        } catch (Exception e) {
+            System.out.println("Exception e1:" + e);
+        }
+
+        System.out.println("testGetFileUpgrade end");
+
+    }
+
 }
