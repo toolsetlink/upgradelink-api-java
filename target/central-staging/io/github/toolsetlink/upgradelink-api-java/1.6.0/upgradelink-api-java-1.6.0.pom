@@ -23,9 +23,9 @@
     </developer>
   </developers>
   <scm>
-    <connection/>
-    <developerConnection/>
-    <url/>
+    <url>https://github.com/toolsetlink/upgradelink-api-java</url>
+    <connection>https://github.com/toolsetlink/upgradelink-api-java.git</connection>
+    <developerConnection>https://github.com/toolsetlink/upgradelink-api-java.git</developerConnection>
   </scm>
   <dependencies>
     <dependency>
