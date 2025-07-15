@@ -8,19 +8,9 @@ public class AppReportRequest extends TeaModel {
     @Validation(required = true)
     public String eventType;
 
-    @NameInMap("devModelKey")
-    public String devModelKey;
-
-    @NameInMap("devKey")
-    public String devKey;
-
     @NameInMap("appKey")
     @Validation(required = true)
     public String appKey;
-
-    @NameInMap("versionCode")
-    @Validation(required = true)
-    public Integer versionCode;
 
     @NameInMap("timestamp")
     public String timestamp;
@@ -42,36 +32,12 @@ public class AppReportRequest extends TeaModel {
         return this.eventType;
     }
 
-    public AppReportRequest setDevModelKey(String devModelKey) {
-        this.devModelKey = devModelKey;
-        return this;
-    }
-    public String getDevModelKey() {
-        return this.devModelKey;
-    }
-
-    public AppReportRequest setDevKey(String devKey) {
-        this.devKey = devKey;
-        return this;
-    }
-    public String getDevKey() {
-        return this.devKey;
-    }
-
     public AppReportRequest setAppKey(String appKey) {
         this.appKey = appKey;
         return this;
     }
     public String getAppKey() {
         return this.appKey;
-    }
-
-    public AppReportRequest setVersionCode(Integer versionCode) {
-        this.versionCode = versionCode;
-        return this;
-    }
-    public Integer getVersionCode() {
-        return this.versionCode;
     }
 
     public AppReportRequest setTimestamp(String timestamp) {
@@ -94,14 +60,30 @@ public class AppReportRequest extends TeaModel {
         @NameInMap("launchTime")
         public String launchTime;
 
-        @NameInMap("code")
-        public Integer code;
+        @NameInMap("versionCode")
+        @Validation(required = true)
+        public Integer versionCode;
+
+        @NameInMap("devModelKey")
+        public String devModelKey;
+
+        @NameInMap("devKey")
+        public String devKey;
+
+        @NameInMap("target")
+        public String target;
+
+        @NameInMap("arch")
+        public String arch;
 
         @NameInMap("downloadVersionCode")
         public Integer downloadVersionCode;
 
         @NameInMap("upgradeVersionCode")
         public Integer upgradeVersionCode;
+
+        @NameInMap("code")
+        public Integer code;
 
         public static AppReportRequestEventData build(java.util.Map<String, ?> map) throws Exception {
             AppReportRequestEventData self = new AppReportRequestEventData();
@@ -116,12 +98,44 @@ public class AppReportRequest extends TeaModel {
             return this.launchTime;
         }
 
-        public AppReportRequestEventData setCode(Integer code) {
-            this.code = code;
+        public AppReportRequestEventData setVersionCode(Integer versionCode) {
+            this.versionCode = versionCode;
             return this;
         }
-        public Integer getCode() {
-            return this.code;
+        public Integer getVersionCode() {
+            return this.versionCode;
+        }
+
+        public AppReportRequestEventData setDevModelKey(String devModelKey) {
+            this.devModelKey = devModelKey;
+            return this;
+        }
+        public String getDevModelKey() {
+            return this.devModelKey;
+        }
+
+        public AppReportRequestEventData setDevKey(String devKey) {
+            this.devKey = devKey;
+            return this;
+        }
+        public String getDevKey() {
+            return this.devKey;
+        }
+
+        public AppReportRequestEventData setTarget(String target) {
+            this.target = target;
+            return this;
+        }
+        public String getTarget() {
+            return this.target;
+        }
+
+        public AppReportRequestEventData setArch(String arch) {
+            this.arch = arch;
+            return this;
+        }
+        public String getArch() {
+            return this.arch;
         }
 
         public AppReportRequestEventData setDownloadVersionCode(Integer downloadVersionCode) {
@@ -138,6 +152,14 @@ public class AppReportRequest extends TeaModel {
         }
         public Integer getUpgradeVersionCode() {
             return this.upgradeVersionCode;
+        }
+
+        public AppReportRequestEventData setCode(Integer code) {
+            this.code = code;
+            return this;
+        }
+        public Integer getCode() {
+            return this.code;
         }
 
     }
