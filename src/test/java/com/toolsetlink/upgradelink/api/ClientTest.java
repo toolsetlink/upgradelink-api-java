@@ -1,14 +1,20 @@
-package com.toolsetlink.upgradelink.api;  // 包名必须与被测试类一致
+package com.toolsetlink.upgradelink.api;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.toolsetlink.upgradelink.api.models.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class ClientTest {  // 类名 = 被测试类名 + Test
+import static com.toolsetlink.upgradelink.api.Client.timeRFC3339;
+
+public class ClientTest {
 
     private final String accessKey = "mui2W50H1j-OC4xD6PgQag";
     private final String accessSecret = "PEbdHFGC0uO_Pch7XWBQTMsFRxKPQAM2565eP8LJ3gc";
     private Client client;
+    // 用于将对象转为JSON字符串的工具
+    private ObjectMapper objectMapper = new ObjectMapper();
 
     @BeforeEach
     void setUp() throws Exception {
@@ -21,53 +27,56 @@ public class ClientTest {  // 类名 = 被测试类名 + Test
     // 测试获取url应用升级信息
     @Test
     public void testGetUrlUpgrade() throws Exception {
-        // 创建 Client 对象
         UrlUpgradeRequest request = new UrlUpgradeRequest();
-        request.setUrlKey("uJ47NPeT7qjLa11gL3sVHqw");
+        request.setUrlKey("OpggWISrLVRFa5y04LzkwA");
         request.setVersionCode(1);
         request.setAppointVersionCode(0);
         request.setDevKey("");
         request.setDevModelKey("");
 
+        // 打印完整请求参数
+        System.out.println("=== 请求参数（UrlUpgrade）：===");
+        System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(request));
+
         try {
-            UrlUpgradeResponse info = client.UrlUpgrade(request);
-            System.out.println(info.code);
-            System.out.println(info.msg);
-            System.out.println(info.data);
+            UrlUpgradeResponse response = client.UrlUpgrade(request);
+            // 打印完整响应信息（JSON格式）
+            System.out.println("\n=== 响应结果（UrlUpgrade）：===");
+            System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(response));
         } catch (Exception e) {
-            System.out.println("Exception e1:" + e);
+            System.out.println("\n=== 请求异常（UrlUpgrade）：===");
+            e.printStackTrace(); // 打印完整堆栈信息
         }
 
-        System.out.println("testGetUrlUpgrade end");
     }
 
     // 测试获取文件应用升级信息
     @Test
     public void testGetFileUpgrade() throws Exception {
-        // 创建 Client 对象
         FileUpgradeRequest request = new FileUpgradeRequest();
-        request.setFileKey("uJ47NPeT7qjLa11gL3sVHqw");
+        request.setFileKey("LOYlLXNy7wV3ySuh0XgtSg");
         request.setVersionCode(1);
         request.setAppointVersionCode(0);
         request.setDevKey("");
         request.setDevModelKey("");
 
+        System.out.println("=== 请求参数（FileUpgrade）：===");
+        System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(request));
+
         try {
-            FileUpgradeResponse info = client.FileUpgrade(request);
-            System.out.println(info.code);
-            System.out.println(info.msg);
-            System.out.println(info.data);
+            FileUpgradeResponse response = client.FileUpgrade(request);
+            System.out.println("\n=== 响应结果（FileUpgrade）：===");
+            System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(response));
         } catch (Exception e) {
-            System.out.println("Exception e1:" + e);
+            System.out.println("\n=== 请求异常（FileUpgrade）：===");
+            e.printStackTrace();
         }
 
-        System.out.println("testGetFileUpgrade end");
     }
 
     // 测试获取apk应用升级信息
     @Test
     public void testGetApkUpgrade() throws Exception {
-        // 创建 Client 对象
         ApkUpgradeRequest request = new ApkUpgradeRequest();
         request.setApkKey("isVZBUvkFhv6oHxk_X-D0Q");
         request.setVersionCode(1);
@@ -75,23 +84,23 @@ public class ClientTest {  // 类名 = 被测试类名 + Test
         request.setDevKey("");
         request.setDevModelKey("");
 
+        System.out.println("=== 请求参数（ApkUpgrade）：===");
+        System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(request));
+
         try {
-            ApkUpgradeResponse info = client.ApkUpgrade(request);
-            System.out.println(info.code);
-            System.out.println(info.msg);
-            System.out.println(info.data);
+            ApkUpgradeResponse response = client.ApkUpgrade(request);
+            System.out.println("\n=== 响应结果（ApkUpgrade）：===");
+            System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(response));
         } catch (Exception e) {
-            System.out.println("Exception e1:" + e);
+            System.out.println("\n=== 请求异常（ApkUpgrade）：===");
+            e.printStackTrace();
         }
 
-        System.out.println("testGetApkUpgrade end");
     }
-
 
     // 测试获取配置升级信息
     @Test
     public void testGetConfigurationUpgrade() throws Exception {
-        // 创建 Client 对象
         ConfigurationUpgradeRequest request = new ConfigurationUpgradeRequest();
         request.setConfigurationKey("q1hfB1VUQaK9VksTZGPU1Q");
         request.setVersionCode(1);
@@ -99,30 +108,29 @@ public class ClientTest {  // 类名 = 被测试类名 + Test
         request.setDevKey("");
         request.setDevModelKey("");
 
+        System.out.println("=== 请求参数（ConfigurationUpgrade）：===");
+        System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(request));
+
         try {
-            ConfigurationUpgradeResponse info = client.ConfigurationUpgrade(request);
-            System.out.println(info.code);
-            System.out.println(info.msg);
-            System.out.println(info.data);
+            ConfigurationUpgradeResponse response = client.ConfigurationUpgrade(request);
+            System.out.println("\n=== 响应结果（ConfigurationUpgrade）：===");
+            System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(response));
         } catch (Exception e) {
-            System.out.println("Exception e1:" + e);
+            System.out.println("\n=== 请求异常（ConfigurationUpgrade）：===");
+            e.printStackTrace();
         }
 
-        System.out.println("testGetConfigurationUpgrade end");
     }
 
-    // 测试获取事件上报接口
-    // /* app_start 应用-启动事件 */
+    // 测试事件上报接口（app_start）
     @Test
     public void testPostAppReport() throws Exception {
-
-        /*  app_start 应用-启动事件 */
         AppReportRequest request = new AppReportRequest();
-        request.setEventType(Enums.EVENT_TYPE_APP_START);
+        request.setEventType("app_start");
         request.setAppKey("LOYlLXNy7wV3ySuh0XgtSg");
-        request.setTimestamp(Tools.timeRFC3339());
+        request.setTimestamp(timeRFC3339());
         request.setEventData(new AppReportRequest.AppReportRequestEventData()
-                .setLaunchTime(Tools.timeRFC3339())
+                .setLaunchTime(timeRFC3339())
                 .setVersionCode(1)
                 .setTarget("darwin")
                 .setArch("x86_64")
@@ -130,27 +138,27 @@ public class ClientTest {  // 类名 = 被测试类名 + Test
                 .setDevKey("")
         );
 
+        System.out.println("=== 请求参数（app_start）：===");
+        System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(request));
+
         try {
-            AppReportResponse info = client.AppReport(request);
-            System.out.println(info.code);
-            System.out.println(info.msg);
+            AppReportResponse response = client.AppReport(request);
+            System.out.println("\n=== 响应结果（app_start）：===");
+            System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(response));
         } catch (Exception e) {
-            System.out.println("Exception e1:" + e);
+            System.out.println("\n=== 请求异常（app_start）：===");
+            e.printStackTrace();
         }
 
-        System.out.println("testPostAppReport end");
     }
 
-    // 测试获取事件上报接口
-    // /* app_upgrade_download 应用升级-下载事件 */
+    // 测试事件上报接口（app_upgrade_download）
     @Test
     public void testPostAppReport1() throws Exception {
-
-        /*  app_upgrade_download 应用升级-下载事件 */
         AppReportRequest request = new AppReportRequest();
-        request.setEventType(Enums.EVENT_TYPE_APP_UPGRADE_DOWNLOAD);
+        request.setEventType("app_upgrade_download");
         request.setAppKey("LOYlLXNy7wV3ySuh0XgtSg");
-        request.setTimestamp(Tools.timeRFC3339());
+        request.setTimestamp(timeRFC3339());
         request.setEventData(new AppReportRequest.AppReportRequestEventData()
                 .setDownloadVersionCode(2)
                 .setCode(0)
@@ -161,27 +169,27 @@ public class ClientTest {  // 类名 = 被测试类名 + Test
                 .setDevKey("")
         );
 
+        System.out.println("=== 请求参数（app_upgrade_download）：===");
+        System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(request));
+
         try {
-            AppReportResponse info = client.AppReport(request);
-            System.out.println(info.code);
-            System.out.println(info.msg);
+            AppReportResponse response = client.AppReport(request);
+            System.out.println("\n=== 响应结果（app_upgrade_download）：===");
+            System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(response));
         } catch (Exception e) {
-            System.out.println("Exception e1:" + e);
+            System.out.println("\n=== 请求异常（app_upgrade_download）：===");
+            e.printStackTrace();
         }
 
-        System.out.println("testPostAppReport end");
     }
 
-    // 测试获取事件上报接口
-    // /* app_upgrade_upgrade 应用升级-升级事件 */
+    // 测试事件上报接口（app_upgrade_upgrade）
     @Test
     public void testPostAppReport2() throws Exception {
-
-        /*  app_upgrade_upgrade 应用升级-升级事件 */
         AppReportRequest request = new AppReportRequest();
-        request.setEventType(Enums.EVENT_TYPE_APP_UPGRADE_UPGRADE);
+        request.setEventType("app_upgrade_upgrade");
         request.setAppKey("LOYlLXNy7wV3ySuh0XgtSg");
-        request.setTimestamp(Tools.timeRFC3339());
+        request.setTimestamp(timeRFC3339());
         request.setEventData(new AppReportRequest.AppReportRequestEventData()
                 .setUpgradeVersionCode(2)
                 .setCode(0)
@@ -192,15 +200,17 @@ public class ClientTest {  // 类名 = 被测试类名 + Test
                 .setDevKey("")
         );
 
+        System.out.println("=== 请求参数（app_upgrade_upgrade）：===");
+        System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(request));
+
         try {
-            AppReportResponse info = client.AppReport(request);
-            System.out.println(info.code);
-            System.out.println(info.msg);
+            AppReportResponse response = client.AppReport(request);
+            System.out.println("\n=== 响应结果（app_upgrade_upgrade）：===");
+            System.out.println(objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(response));
         } catch (Exception e) {
-            System.out.println("Exception e1:" + e);
+            System.out.println("\n=== 请求异常（app_upgrade_upgrade）：===");
+            e.printStackTrace();
         }
 
-        System.out.println("testPostAppReport end");
     }
-
 }

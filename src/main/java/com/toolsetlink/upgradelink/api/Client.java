@@ -1235,4 +1235,7 @@ public class Client {
         interceptorChain.addResponseInterceptor(interceptor);
     }
 
+    public static String timeRFC3339() throws Exception {
+        return com.toolsetlink.darabonba.base.Client.timeRFC3339();
+    }
 }

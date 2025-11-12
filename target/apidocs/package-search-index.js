@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"com.toolsetlink.upgradelink.api"},{"l":"com.toolsetlink.upgradelink.api.models"},{"l":"所有程序包","u":"allpackages-index.html"}];updateSearchResults();
